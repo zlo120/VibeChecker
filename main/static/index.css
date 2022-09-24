@@ -89,13 +89,23 @@ h3 {
     padding-left: 8%;
 }
 
+.heading h3 {
+    margin-top: 40px;
+    vertical-align: top;
+    /* line-height: 100px; */
+}
+
+.phonetic img {
+    height: 40px;
+}
+
 .heading {
     width: 100%;
     background-color: #F5AC67;
-    padding-bottom: 5%;
+    padding-bottom: 7%;
 }
 
-.heading img {
+.gif img {
     display:block;
     margin:auto;
     border: 15px white solid;
@@ -104,7 +114,7 @@ h3 {
     transition: box-shadow 1s;
 }
 
-.heading img:hover {
+.gif img:hover {
     box-shadow: 10px 10px #c26c1c;
     transition: box-shadow 1s;
 }
@@ -124,12 +134,16 @@ h3 {
     font-weight: 500;
     color: #1e1e1e;
     transition: box-shadow 0.5s;
+    transition: text-decoration 1s;
 }
 
 .vibe-check:hover {
     box-shadow: 5px 5px #d3ffde;
+    /* text-decoration: solid 2px underline; */
     transition: box-shadow 0.5s;
+    transition: text-decoration 1s;
 }
+
 /* INSERT IT AFTER A CERTAIN WIDTH */
 
 .gif {
@@ -148,4 +162,11 @@ h3 {
 header {
     /* position: fixed; */
     width: 100%;
+}
+
+footer {
+    background-color: #2e1541;
+    color: white;
+    bottom: 0;
+    padding: 20px;
 }
