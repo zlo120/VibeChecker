@@ -10,9 +10,9 @@
     <title>Vibechecker</title>
 </head>
 
-<body id="name">
+<body id="name" onload="myFunction()">
     <header>
-        <div class="heading">
+        <div class="heading" id="heading">
             <h1>Sophie</h1>
             <h3 class="phonetic">
                 <img
@@ -58,5 +58,52 @@
         <p>Copyright</p>
     </footer>
 </body>
+
+<script>
+
+    function myFunction() {
+        var types = ["Freedom Fighter", "Crypto King", "Social Justice Warrior", "Certified Chad", "Gym Junkie", "Tiktok Tart", "Netflix Ninja", "Socially Inadequate", "KAREN", "Dillusional Donut"];
+        var currentType = types[1];
+
+        const myElement = document.getElementById("heading");
+
+        // Altering the styles based on the Type of Character they are
+        switch (currentType) {
+            case types[0]:
+                document.getElementById("heading").style.backgroundColor = "#6cff8c";
+                break;
+            case types[1]:
+                document.getElementById("heading").style.backgroundColor = "#f0ff50";
+                break;
+            case types[2]:
+                document.getElementById("heading").style.backgroundColor = "#F5AC67";
+                break;
+            case types[3]:
+                document.getElementById("heading").style.backgroundColor = "#50ffc8";
+                break;
+            case types[4]:
+                document.getElementById("heading").style.backgroundColor = "#50a2ff";
+                break;
+            case types[5]:
+                document.getElementById("heading").style.backgroundColor = "#ff509c";
+                break;
+            case types[6]:
+                document.getElementById("heading").style.backgroundColor = "#000000";
+                break;
+            case types[7]:
+                document.getElementById("heading").style.backgroundColor = "#F5AC67";
+                break;
+            case types[8]:
+                document.getElementById("heading").style.backgroundColor = "#F5AC67";
+                break;
+            case types[9]:
+                document.getElementById("heading").style.backgroundColor = "#F5AC67";
+                break;
+            default:
+                document.getElementById("heading").style.backgroundColor = "#F5AC67";
+                break;
+        }
+    }
+</script>
 
 </html>

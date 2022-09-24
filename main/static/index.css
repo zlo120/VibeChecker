@@ -3,6 +3,14 @@
 body {
     font-family: 'Inter', sans-serif !important;
     margin: 0;
+    /* Select no text */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: url('./images/normal.png'), default;
 }
 
 @media (min-width: 700px) {
@@ -90,25 +98,43 @@ h3 {
 }
 
 .heading h3 {
-    margin-top: 40px;
     vertical-align: top;
     /* line-height: 100px; */
 }
 
 .phonetic img {
     height: 40px;
+    vertical-align: middle;
 }
+
 
 .heading {
     width: 100%;
     background-color: #F5AC67;
+    /* background-color: #6cff8c; */
     padding-bottom: 7%;
+	/* background: linear-gradient(-45deg, #F5AC67, #f97549, #f65145, #f5ae3d);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite; */
 }
+
+/* @keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+} */
 
 .gif img {
     display:block;
     margin:auto;
     border: 15px white solid;
+    border-radius: 5px;
     box-shadow: none;
     margin-bottom: 8%;
     transition: box-shadow 1s;
@@ -125,23 +151,58 @@ h3 {
 }
 
 .vibe-check {
+    font-family: 'Azeret Mono', sans-serif !important;
     width: 80%;
     margin: auto;
-    background-color: rgb(170, 255, 169);
+    background-color: rgb(138, 247, 136);
     padding: 5% 0 5% 5%;
     border-radius: 20px;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: 500;
     color: #1e1e1e;
-    transition: box-shadow 0.5s;
-    transition: text-decoration 1s;
+    box-shadow: none;    
+    cursor: url('./images/minimal-lightning-cursor-c.cur.png'), default;
+    transition: 1s;
+
+    /* transition: background-color 1s; */
 }
 
+	/* background: linear-gradient(-45deg, #F5AC67, #f97549, #f65145, #f5ae3d);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite; */
+
+/* @keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+} */
+
 .vibe-check:hover {
-    box-shadow: 5px 5px #d3ffde;
+    background-color: rgb(184, 255, 91);
+    box-shadow: 5px 5px white;
     /* text-decoration: solid 2px underline; */
-    transition: box-shadow 0.5s;
-    transition: text-decoration 1s;
+    transition: 1s;
+    background: linear-gradient(45deg, #A5F494, #6fff00, #6ae0f3, #4979ff);
+	background-size: 400% 400%;
+	animation: gradient 5s ease infinite;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
 
 /* INSERT IT AFTER A CERTAIN WIDTH */
@@ -163,6 +224,7 @@ header {
     /* position: fixed; */
     width: 100%;
 }
+
 
 footer {
     background-color: #2e1541;
