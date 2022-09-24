@@ -13,9 +13,9 @@
 <body id="name" onload="myFunction()">
     <header>
         <div class="heading" id="heading">
-            <h1>Sophie</h1>
+            <h1 id="title">Sophie</h1>
             <h3 class="phonetic">
-                <img
+                <img id="giphy"
                     src="https://img.icons8.com/external-icongeek26-outline-icongeek26/64/000000/external-fist-martial-arts-icongeek26-outline-icongeek26.png" />
                 Freedom
                 Fighter
@@ -63,39 +63,126 @@
 
     function myFunction() {
         var types = ["Freedom Fighter", "Crypto King", "Social Justice Warrior", "Certified Chad", "Gym Junkie", "Tiktok Tart", "Netflix Ninja", "Socially Inadequate", "KAREN", "Dillusional Donut"];
-        var currentType = types[1];
+        var currentType = types[3];
 
         const myElement = document.getElementById("heading");
 
         // Altering the styles based on the Type of Character they are
         switch (currentType) {
+            // Freedom
             case types[0]:
                 document.getElementById("heading").style.backgroundColor = "#6cff8c";
+                document.getElementById("title").style.color = "#468B48";
+
+                // Style for box shadow
+                var style = document.createElement('style');
+                style.innerHTML = `
+                .gif img {
+                    box-shadow: 0 0 #468B48;
+                    transition: box-shadow 1s;
+                }
+                
+                .gif img:hover {
+                    box-shadow: 10px 10px #468B48;
+                    transition: box-shadow 1s;
+                }
+                `;
+                document.head.appendChild(style);
+
                 break;
+
+
+            // Crypto
             case types[1]:
-                document.getElementById("heading").style.backgroundColor = "#f0ff50";
+                document.getElementById("heading").style.backgroundColor = "#fff056";
+                document.getElementById("title").style.color = "#2b9348";
+
+                // Style for box shadow
+                var style = document.createElement('style');
+                style.innerHTML = `
+                .gif img {
+                    box-shadow: 0 0 #2b9348;
+                    transition: box-shadow 1s;
+                }
+                
+                .gif img:hover {
+                    box-shadow: 10px 10px #2b9348;
+                    transition: box-shadow 1s;
+                }
+                `;
+                document.head.appendChild(style);
                 break;
+
+
+            // Social
             case types[2]:
-                document.getElementById("heading").style.backgroundColor = "#F5AC67";
+                document.getElementById("heading").style.backgroundColor = "#c86bfa";
+                document.getElementById("title").style.color = "#3d0066";
+
+                // Style for box shadow
+                var style = document.createElement('style');
+                style.innerHTML = `
+                .gif img {
+                    box-shadow: 0 0 #3d0066;
+                    transition: box-shadow 1s;
+                }
+                
+                .gif img:hover {
+                    box-shadow: 10px 10px #3d0066;
+                    transition: box-shadow 1s;
+                }
+                `;
+                document.head.appendChild(style);
                 break;
+
+
+
+            // Chad
             case types[3]:
                 document.getElementById("heading").style.backgroundColor = "#50ffc8";
+                document.getElementById("title").style.color = "#225560";
+
+                // Style for box shadow
+                var style = document.createElement('style');
+                style.innerHTML = `
+                .gif img {
+                    box-shadow: 0 0 #00A370;
+                    transition: box-shadow 1s;
+                }
+                
+                .gif img:hover {
+                    box-shadow: 10px 10px #00A370;
+                    transition: box-shadow 1s;
+                }
+                `;
+                document.head.appendChild(style);
                 break;
+
+                
+            // Gym
             case types[4]:
                 document.getElementById("heading").style.backgroundColor = "#50a2ff";
                 break;
+            // Tiktok
             case types[5]:
                 document.getElementById("heading").style.backgroundColor = "#ff509c";
                 break;
+            // Netflix
             case types[6]:
                 document.getElementById("heading").style.backgroundColor = "#000000";
                 break;
+
+            // Socially Inadequate
             case types[7]:
                 document.getElementById("heading").style.backgroundColor = "#F5AC67";
                 break;
+
+            // Karen
             case types[8]:
-                document.getElementById("heading").style.backgroundColor = "#F5AC67";
+                document.getElementById("heading").style.backgroundColor = "##A8DCD1";
                 break;
+
+            // Dillusional
             case types[9]:
                 document.getElementById("heading").style.backgroundColor = "#F5AC67";
                 break;

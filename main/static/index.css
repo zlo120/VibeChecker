@@ -137,12 +137,6 @@ h3 {
     border-radius: 5px;
     box-shadow: none;
     margin-bottom: 8%;
-    transition: box-shadow 1s;
-}
-
-.gif img:hover {
-    box-shadow: 10px 10px #c26c1c;
-    transition: box-shadow 1s;
 }
 
 .profile-pic {
