@@ -25,7 +25,8 @@
         </div>
 
         <div class="buttons">
-            <button class="blob-btn">
+            
+            <button onclick="move()" class="blob-btn">
                 Discover
                 <span class="blob-btn__inner">
                     <span class="blob-btn__blobs">
@@ -50,5 +51,11 @@
             </svg>
     </header>
 </body>
+
+<script>
+    function move(){
+        window.open(href="{{url_for('main.form', _external = True)}}","_self")
+    }
+</script>
 
 </html>

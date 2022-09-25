@@ -4,16 +4,24 @@
 <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <link rel="stylesheet" href="../static/index.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <title>Vibechecker</title>
 </head>
 
-<body id="name" onload="myFunction()">
+<body id="name" onload="myFunction(); ">
+    <div class="coverAll" id="coverAll">
+        <div id="center">
+            <img style="height: 40px;"
+                src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/35771931234507.564a1d2403b3a.gif" />
+            <h3>Gathering analytics...</h3>
+        </div>
+    </div>
+
     <header>
         <div class="heading" id="heading">
-            <h1 id="title">Sophie</h1>
+            <h1 id="title">{{person.Name}}</h1>
             <h3 class="phonetic" id="phonetic">
                 <img id="icon" src="nothing" />
                 <span id="type-text"></span>
@@ -21,12 +29,12 @@
 
             <div class="gif">
                 <img class="profile-pic"
-                    src="{{url}}" />
+                    src="{{person.ImageURL}}" />
             </div>
 
-            <div class="vibe-check">
+            <div class="vibe-check" id="vibe-check">
                 Is it a vibe?
-                <span>YEAH</span>
+                <span id="yahnah">YEAH</span>
             </div>
         </div>
     </header>
@@ -35,22 +43,50 @@
             Bio
         </h2>
         <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Odio convallis sagittis libero pellentesque integer
-            tristique turpis. Aliquam fringilla ornare elit eu, imperdiet sit. Consectetur imperdiet vulputate massa
-            iaculis egestas euismod.
+            {{person.Description}}
         </p>
+
         <h2>
-            Skills
+            Strength
+        </h2>
+        <div class="skill" id="strength">Strength</div>
+
+        <h2>
+            Weakness
+        </h2>
+        <div class="skill" id="weakness">Weakness</div>
+
+        <h2>
+            Attributes
         </h2>
         <p>This character card has the following skills:</p>
-        <div class="skill">Studies</div>
-        <div class="skill">Can swim</div>
-        <div class="skill">Party animal</div>
-        <div class="skill">Quiet Quitter</div>
-        <div class="skill"></div>
-        <div class="skill"></div>
-        <div class="skill"></div>
-        <div class="skill"></div>
+        <div class="here">
+            <div class="skill att">Strength</div>
+            <div class="skill result">{{person.Strength}}/10</div>
+        </div>
+
+        <div class="here">
+            <div class="skill att">Intelligence</div>
+            <div class="skill result">{{person.Intelligence}}/10</div>
+        </div>
+
+        <div class="here">
+            <div class="skill att">Wealth</div>
+            <div class="skill result">{{person.Wealth}}/10</div>
+        </div>
+
+        <div class="here">
+            <div class="skill att">Laziness</div>
+            <div class="skill result">{{person.Laziness}}/10</div>
+        </div>
+
+        <div class="here">
+            <div class="skill att">Clumsiness</div>
+            <div class="skill result">{{person.Clumsiness}}/10</div>
+        </div>
+
+        <label>Share your card!</label><br>
+        <a style="width: 100%; border: none; padding-top: 20px; color: purple;" type="text" readonly href="{{url_for('main.card', ID = person.URLCode, _external = True)}}">Click here</a>
     </main>
     <footer>
         <p>Copyright</p>
@@ -58,10 +94,29 @@
 </body>
 
 <script>
+    setTimeout(
+        () => {
+            const element = document.getElementById("coverAll");
+            element.remove();
+        },
+        4 * 1000
+    );
 
     function myFunction() {
+        var yesno = ["NAHHHH", "YAH"];
+        var yesnonumber = {{person.isAVibe}};
+
+        document.getElementById("yahnah").innerHTML = yesno[yesnonumber];
+
         var types = ["Freedom Fighter", "Crypto King", "Social Justice Warrior", "Certified Chad", "Gym Junkie", "Tiktok Tart", "Netflix Ninja", "Socially Inadequate", "KAREN", "Dillusional Donut"];
-        var currentType = types[8];
+
+        // INSERT THE MATH RANDOM
+
+        //var number = Math.floor(Math.random() * 10);
+        //var currentType = types[number];
+        var currentType = types[{{person.Type - 1}}];
+
+
 
         const myElement = document.getElementById("heading");
 
@@ -72,6 +127,10 @@
                 document.getElementById("type-text").innerHTML = "Freedom Fighter";
                 document.getElementById("heading").style.backgroundColor = "#6cff8c";
                 document.getElementById("title").style.color = "#468B48";
+                document.getElementById("vibe-check").style.backgroundColor = "#468B48";
+                document.getElementById("vibe-check").style.color = "white";
+                document.getElementById("strength").style.backgroundColor = "#468B48";
+                document.getElementById("weakness").style.backgroundColor = "#468B48";
 
                 // Style for box shadow
                 var style = document.createElement('style');
@@ -85,11 +144,33 @@
                     box-shadow: 10px 10px #468B48;
                     transition: box-shadow 1s;
                 }
+
+                .vibe-check:hover {
+                    background: linear-gradient(90deg, #468B48, #46C283, #46FF83, #46FFBF);
+                    background-size: 400% 400%;
+                    animation: gradient 5s ease infinite;  
+                }
+
+                @keyframes gradient {
+                    0% {
+                        background-position: 0% 50%;
+                    }
+                    50% {
+                        background-position: 100% 50%;
+                    }
+                    100% {
+                        background-position: 0% 50%;
+                    }
+                }
                 `;
                 document.head.appendChild(style);
 
                 // Add in image
                 document.getElementById("icon").src = "https://img.icons8.com/external-icongeek26-outline-icongeek26/64/000000/external-fist-martial-arts-icongeek26-outline-icongeek26.png";
+
+                // Strength Weakness
+                document.getElementById("strength").innerHTML = "Assumed Street Smart";
+                document.getElementById("weakness").innerHTML = "Medical Advice and Google Search";
 
                 break;
 
@@ -99,6 +180,10 @@
                 document.getElementById("type-text").innerHTML = "Crypto King";
                 document.getElementById("heading").style.backgroundColor = "#fff056";
                 document.getElementById("title").style.color = "#2b9348";
+                document.getElementById("vibe-check").style.backgroundColor = "#2b9348";
+                document.getElementById("vibe-check").style.color = "white";
+                document.getElementById("strength").style.backgroundColor = "#2b9348";
+                document.getElementById("weakness").style.backgroundColor = "#2b9348";
 
                 // Style for box shadow
                 var style = document.createElement('style');
@@ -112,11 +197,33 @@
                     box-shadow: 10px 10px #2b9348;
                     transition: box-shadow 1s;
                 }
+
+                .vibe-check:hover {
+                    background: linear-gradient(90deg, #2b9348, #2B9392, #8EC348, #DAC348);
+                    background-size: 400% 400%;
+                    animation: gradient 5s ease infinite;  
+                }
+
+                @keyframes gradient {
+                    0% {
+                        background-position: 0% 50%;
+                    }
+                    50% {
+                        background-position: 100% 50%;
+                    }
+                    100% {
+                        background-position: 0% 50%;
+                    }
+                }
                 `;
                 document.head.appendChild(style);
 
                 document.getElementById("title").style.color = "#468B48";
                 document.getElementById("icon").src = "https://i.imgur.com/uwRYQhy.png";
+
+                // Strength Weakness
+                document.getElementById("strength").innerHTML = "Investment confidence of a Conartist";
+                document.getElementById("weakness").innerHTML = "Sunlight";
                 break;
 
 
@@ -125,6 +232,10 @@
                 document.getElementById("type-text").innerHTML = "Social Justice Warrior";
                 document.getElementById("heading").style.backgroundColor = "#c86bfa";
                 document.getElementById("title").style.color = "#3d0066";
+                document.getElementById("vibe-check").style.backgroundColor = "#3d0066";
+                document.getElementById("vibe-check").style.color = "white";
+                document.getElementById("strength").style.backgroundColor = "#3d0066";
+                document.getElementById("weakness").style.backgroundColor = "#3d0066";
 
                 // Style for box shadow
                 var style = document.createElement('style');
@@ -138,10 +249,33 @@
                     box-shadow: 10px 10px #3d0066;
                     transition: box-shadow 1s;
                 }
+
+                .vibe-check:hover {
+                    background: linear-gradient(90deg, #3d0066, #7F0066, #7F00A8, #7F3DD8);
+                    background-size: 400% 400%;
+                    animation: gradient 5s ease infinite;  
+                }
+
+                @keyframes gradient {
+                    0% {
+                        background-position: 0% 50%;
+                    }
+                    50% {
+                        background-position: 100% 50%;
+                    }
+                    100% {
+                        background-position: 0% 50%;
+                    }
+                }
                 `;
                 document.head.appendChild(style);
 
                 document.getElementById("icon").src = "https://img.icons8.com/external-prettycons-lineal-prettycons/49/000000/external-justice-security-prettycons-lineal-prettycons.png";
+
+                // Strength Weakness
+                document.getElementById("strength").innerHTML = "Coloured Hair";
+                document.getElementById("weakness").innerHTML = "Coloured Hair";
+
                 break;
 
 
@@ -151,6 +285,11 @@
                 document.getElementById("type-text").innerHTML = "Certified Chad";
                 document.getElementById("heading").style.backgroundColor = "#50ffc8";
                 document.getElementById("title").style.color = "#225560";
+                document.getElementById("type-text").style.color = "#225560";
+                document.getElementById("vibe-check").style.backgroundColor = "#225560";
+                document.getElementById("vibe-check").style.color = "white";
+                document.getElementById("strength").style.backgroundColor = "#225560";
+                document.getElementById("weakness").style.backgroundColor = "#225560";
 
                 // Style for box shadow
                 var style = document.createElement('style');
@@ -164,10 +303,33 @@
                     box-shadow: 10px 10px #00A370;
                     transition: box-shadow 1s;
                 }
+
+                .vibe-check:hover {
+                    background: linear-gradient(90deg, #00A370, #007E70, #007E9F, #00629F);
+                    background-size: 400% 400%;
+                    animation: gradient 5s ease infinite;  
+                }
+
+                @keyframes gradient {
+                    0% {
+                        background-position: 0% 50%;
+                    }
+                    50% {
+                        background-position: 100% 50%;
+                    }
+                    100% {
+                        background-position: 0% 50%;
+                    }
+                }
                 `;
                 document.head.appendChild(style);
 
                 document.getElementById("icon").src = "https://i.imgur.com/HdjRNlz.png";
+
+                // Strength Weakness
+                document.getElementById("strength").innerHTML = "Steroids.... Do you even inject bruh";
+                document.getElementById("weakness").innerHTML = "Woman and Relationships";
+
                 break;
 
 
@@ -175,31 +337,206 @@
             case types[4]:
                 document.getElementById("type-text").innerHTML = "Gym Junkie";
                 document.getElementById("heading").style.backgroundColor = "#50a2ff";
+                document.getElementById("title").style.color = "#3841C7";
+                document.getElementById("type-text").style.color = "#3841C7";
+                document.getElementById("vibe-check").style.backgroundColor = "#3841C7";
+                document.getElementById("vibe-check").style.color = "white";
+                document.getElementById("strength").style.backgroundColor = "#3841C7";
+                document.getElementById("weakness").style.backgroundColor = "#3841C7";
+
+                // Style for box shadow
+                var style = document.createElement('style');
+                style.innerHTML = `
+                .gif img {
+                    box-shadow: 0 0 #3841C7;
+                    transition: box-shadow 1s;
+                }
+                
+                .gif img:hover {
+                    box-shadow: 10px 10px #3841C7;
+                    transition: box-shadow 1s;
+                }
+
+                .vibe-check:hover {
+                    background: linear-gradient(90deg, #3841C7, #6941C7, #697BC7, #877BC7);
+                    background-size: 400% 400%;
+                    animation: gradient 5s ease infinite;  
+                }
+
+                @keyframes gradient {
+                    0% {
+                        background-position: 0% 50%;
+                    }
+                    50% {
+                        background-position: 100% 50%;
+                    }
+                    100% {
+                        background-position: 0% 50%;
+                    }
+                }
+                `;
+                document.head.appendChild(style);
 
                 document.getElementById("icon").src = "https://i.imgur.com/aiSWcbG.png";
+
+                // Strength Weakness
+                document.getElementById("strength").innerHTML = "Pectoral Strength";
+                document.getElementById("weakness").innerHTML = "Legz";
                 break;
+
             // Tiktok
             case types[5]:
                 document.getElementById("type-text").innerHTML = "Tiktok Tart";
                 document.getElementById("heading").style.backgroundColor = "#ff509c";
+                document.getElementById("title").style.color = "#0C5E9B";
+                document.getElementById("type-text").style.color = "#0C5E9B";
+                document.getElementById("vibe-check").style.backgroundColor = "#0C5E9B";
+                document.getElementById("vibe-check").style.color = "white";
+                document.getElementById("strength").style.backgroundColor = "#0C5E9B";
+                document.getElementById("weakness").style.backgroundColor = "#0C5E9B";
+
+                // Style for box shadow
+                var style = document.createElement('style');
+                style.innerHTML = `
+                    .gif img {
+                        box-shadow: 0 0 #0C5E9B;
+                        transition: box-shadow 1s;
+                    }
+                    
+                    .gif img:hover {
+                        box-shadow: 10px 10px #0C5E9B;
+                        transition: box-shadow 1s;
+                    }
+
+
+                .vibe-check:hover {
+                    background: linear-gradient(90deg, #0C5E9B, #3A5E9B, #775E9B, #B05E9B);
+                    background-size: 400% 400%;
+                    animation: gradient 5s ease infinite;  
+                }
+
+                @keyframes gradient {
+                    0% {
+                        background-position: 0% 50%;
+                    }
+                    50% {
+                        background-position: 100% 50%;
+                    }
+                    100% {
+                        background-position: 0% 50%;
+                    }
+                }
+                    `;
+                document.head.appendChild(style);
 
                 document.getElementById("icon").src = "https://i.imgur.com/1dkti4o.png";
 
+                // Strength Weakness
+                document.getElementById("strength").innerHTML = "Impeccable Dancing Skills";
+                document.getElementById("weakness").innerHTML = "Real World Skills";
                 break;
+
             // Netflix
             case types[6]:
-                document.getElementById("type-text").innerHTML = "Netflix";
+                document.getElementById("type-text").innerHTML = "Netflix Ninja";
                 document.getElementById("heading").style.backgroundColor = "#000000";
+                document.getElementById("title").style.color = "#fa2a2a";
+                document.getElementById("type-text").style.color = "#fa2a2a";
+                document.getElementById("vibe-check").style.backgroundColor = "#fa2a2a";
+                document.getElementById("vibe-check").style.color = "white";
+                document.getElementById("strength").style.backgroundColor = "#fa2a2a";
+                document.getElementById("weakness").style.backgroundColor = "#fa2a2a";
+
+                // Style for box shadow
+                var style = document.createElement('style');
+                style.innerHTML = `
+                .gif img {
+                    box-shadow: 0 0 #fa2a2a;
+                    transition: box-shadow 1s;
+                }
+                
+                .gif img:hover {
+                    box-shadow: 10px 10px #fa2a2a;
+                    transition: box-shadow 1s;
+                }
+
+                .vibe-check:hover {
+                    background: linear-gradient(90deg, #fa2a2a, #FA5F2A, #FA5F44, #FA7544);
+                    background-size: 400% 400%;
+                    animation: gradient 5s ease infinite;  
+                }
+
+                @keyframes gradient {
+                    0% {
+                        background-position: 0% 50%;
+                    }
+                    50% {
+                        background-position: 100% 50%;
+                    }
+                    100% {
+                        background-position: 0% 50%;
+                    }
+                }
+                `;
+                document.head.appendChild(style);
 
                 document.getElementById("icon").src = "https://i.imgur.com/xGDgjub.jpg";
+
+                // Strength Weakness
+                document.getElementById("strength").innerHTML = "Binger";
+                document.getElementById("weakness").innerHTML = "A Healthy Sleep Schedule";
                 break;
 
             // Socially Inadequate
             case types[7]:
                 document.getElementById("type-text").innerHTML = "Socially Inadequate";
                 document.getElementById("heading").style.backgroundColor = "#F5AC67";
+                document.getElementById("title").style.color = "#814B72";
+                document.getElementById("type-text").style.color = "#814B72";
+                document.getElementById("vibe-check").style.backgroundColor = "#814B72";
+                document.getElementById("vibe-check").style.color = "white";
+                document.getElementById("strength").style.backgroundColor = "#814B72";
+                document.getElementById("weakness").style.backgroundColor = "#814B72";
+
+                // Style for box shadow
+                var style = document.createElement('style');
+                style.innerHTML = `
+                .gif img {
+                    box-shadow: 0 0 #814B72;
+                    transition: box-shadow 1s;
+                }
+                
+                .gif img:hover {
+                    box-shadow: 10px 10px #814B72;
+                    transition: box-shadow 1s;
+                }
+
+                .vibe-check:hover {
+                    background: linear-gradient(90deg, #814B72, #744B9B, #484B9B, #481AD5);
+                    background-size: 400% 400%;
+                    animation: gradient 5s ease infinite;  
+                }
+
+                @keyframes gradient {
+                    0% {
+                        background-position: 0% 50%;
+                    }
+                    50% {
+                        background-position: 100% 50%;
+                    }
+                    100% {
+                        background-position: 0% 50%;
+                    }
+                }
+                `;
+                document.head.appendChild(style);
 
                 document.getElementById("icon").src = "https://i.imgur.com/ztxp2Pr.png";
+
+                // Strength Weakness
+                document.getElementById("strength").innerHTML = "League of Legends";
+                document.getElementById("weakness").innerHTML = "Social Interaction";
+
                 break;
 
             // Karen
@@ -207,16 +544,102 @@
                 document.getElementById("type-text").innerHTML = "KAREN";
                 document.getElementById("heading").style.backgroundColor = "#A8DCD1";
                 document.getElementById("title").style.color = "#FF305A";
+                document.getElementById("type-text").style.color = "#FF305A";
+                document.getElementById("vibe-check").style.backgroundColor = "#FF305A";
+                document.getElementById("vibe-check").style.color = "white";
+                document.getElementById("strength").style.backgroundColor = "#FF305A";
+                document.getElementById("weakness").style.backgroundColor = "#FF305A";
+
+                // Style for box shadow
+                var style = document.createElement('style');
+                style.innerHTML = `
+                .gif img {
+                    box-shadow: 0 0 #FF305A;
+                    transition: box-shadow 1s;
+                }
+                
+                .gif img:hover {
+                    box-shadow: 10px 10px #FF305A;
+                    transition: box-shadow 1s;
+                }
+                .vibe-check:hover {
+                    background: linear-gradient(90deg, #FF305A, #FF665A, #FFB85A, #FFBCDD);
+                    background-size: 400% 400%;
+                    animation: gradient 5s ease infinite;  
+                }
+
+                @keyframes gradient {
+                    0% {
+                        background-position: 0% 50%;
+                    }
+                    50% {
+                        background-position: 100% 50%;
+                    }
+                    100% {
+                        background-position: 0% 50%;
+                    }
+                }
+                `;
+                document.head.appendChild(style);
 
                 document.getElementById("icon").src = "https://i.imgur.com/ZcmISws.png";
+
+                // Strength Weakness
+                document.getElementById("strength").innerHTML = "Public speaking, Extensive knowledge, Grammar ";
+                document.getElementById("weakness").innerHTML = "Policies and Procedures";
                 break;
 
             // Dillusional
             case types[9]:
                 document.getElementById("type-text").innerHTML = "Dillusional Donut";
-                document.getElementById("heading").style.backgroundColor = "#F5AC67";
+                document.getElementById("heading").style.backgroundColor = "#D5CBFF";
+                document.getElementById("title").style.color = "#6AC3FF";
+                document.getElementById("type-text").style.color = "#6AC3FF";
+                document.getElementById("strength").style.backgroundColor = "#6AC3FF";
+                document.getElementById("weakness").style.backgroundColor = "#6AC3FF";
+                document.getElementById("vibe-check").style.backgroundColor = "#6AC3FF";
+                document.getElementById("vibe-check").style.color = "white";
 
-                document.getElementById("icon").src = "https://i.imgur.com/xGDgjub.jpg";
+                // Style for box shadow
+                var style = document.createElement('style');
+                style.innerHTML = `
+                .gif img {
+                    box-shadow: 0 0 #6AC3FF;
+                    transition: box-shadow 1s;
+                }
+                
+                .gif img:hover {
+                    box-shadow: 10px 10px #6AC3FF;
+                    transition: box-shadow 1s;
+                }
+
+                .vibe-check:hover {
+                    background: linear-gradient(90deg, #6AC3FF, #6A7BFF, #BB7BFF, #BB34FF);
+                    background-size: 400% 400%;
+                    animation: gradient 5s ease infinite;  
+                }
+
+                @keyframes gradient {
+                    0% {
+                        background-position: 0% 50%;
+                    }
+                    50% {
+                        background-position: 100% 50%;
+                    }
+                    100% {
+                        background-position: 0% 50%;
+                    }
+                }
+                `;
+                document.head.appendChild(style);
+
+                document.getElementById("icon").src = "https://i.imgur.com/PJ3mtoF.png";
+
+                // Strength Weakness
+                document.getElementById("strength").innerHTML = "Nothing";
+                document.getElementById("weakness").innerHTML = "Everything";
+
+
                 break;
             default:
                 document.getElementById("type-text").innerHTML = "Boring";

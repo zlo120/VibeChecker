@@ -32,6 +32,10 @@ body {
     color:white;
 }
 
+input:focus {
+    outline:none;
+}
+
 #center {
     width: 100%;
     justify-content: center;
