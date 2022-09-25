@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+html {
+  cursor: url('./images/normal.png'), default;
+}
+body {
+    /* font-family: 'Inter', sans-serif !important;*/
+    margin: 0;
+}
+
+main {
+    padding: 20px;
+}
+
+h2 {
+    font-size: 1.3em !important;
+    color: #2e1541;
+}
+
+
+
+.logo {
+    background-color: #662C91;
+    width: 100%;
+    z-index: 1;
+    color: white;
+    padding: 10px 10px 10px 30px;
+    
+    margin: 0 !important;
+}
+.logo h1 {
+    font-family:  'Press Start 2P', cursive;
+    color: white;
+    font-size:20pt;
+    padding-left: 30px;
+
+}
+
+
+  div{
+
+    margin: 20px;
+  }
+body{
+    background-color: #113755
+}
+
+ .mains{
+    z-index: 2;
+    
+    height: 500px;
+    width: 700px;
+    float: left;
+
+ }
+
+ .mains h1{
+ font-family: 'Azeret Mono', sans-serif !important;
+ color: white;
+    font-size: 45pt;
+ }
+ .mains p{
+    color: white;
+ }
+
+ .immm{
+
+    width: 100px;
+    
+    float: left;
+ }
+ *, *:before, *:after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    background:url("../static/assets/img2.gif") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+  
+  .buttons {
+    margin-top: 400px;
+    margin-left: -800px;
+    text-align: center;
+    border-radius: 30px;
+    float: left;
+  }
+  
+  .blob-btn {
+    z-index: 2;
+    position: relative;
+    
+    padding: 20px 46px;
+    margin-bottom: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #662C91;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    transition: color 0.5s;
+    cursor: pointer;
+    border-radius: 30px;
+  }
+  .blob-btn:before {
+    content: "";
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #662C91;
+    border-radius: 30px;
+  }
+  .blob-btn:after {
+    content: "";
+    z-index: -2;
+    position: absolute;
+    left: 3px;
+    top: 3px;
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s 0.2s;
+    border-radius: 30px;
+  }
+  .blob-btn:hover {
+    color: #FFFFFF;
+    border-radius: 30px;
+  }
+  .blob-btn:hover:after {
+    transition: all 0.3s;
+    left: 0;
+    top: 0;
+    border-radius: 30px;
+  }
+  .blob-btn__inner {
+    z-index: -1;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    background: #ffffff;
+  }
+  .blob-btn__blobs {
+    position: relative;
+    display: block;
+    height: 100%;
+    filter: url("#goo");
+  }
+  .blob-btn__blob {
+    position: absolute;
+    top: 2px;
+    width: 25%;
+    height: 100%;
+    background: #662C91;
+    border-radius: 100%;
+    transform: translate3d(0, 150%, 0) scale(1.7);
+    transition: transform 0.45s;
+  }
+  @supports (filter: url("#goo")) {
+    .blob-btn__blob {
+      transform: translate3d(0, 150%, 0) scale(1.4);
+    }
+  }
+  .blob-btn__blob:nth-child(1) {
+    left: 0%;
+    transition-delay: 0s;
+  }
+  .blob-btn__blob:nth-child(2) {
+    left: 30%;
+    transition-delay: 0.08s;
+  }
+  .blob-btn__blob:nth-child(3) {
+    left: 60%;
+    transition-delay: 0.16s;
+  }
+  .blob-btn__blob:nth-child(4) {
+    left: 90%;
+    transition-delay: 0.24s;
+  }
+  .blob-btn:hover .blob-btn__blob {
+    transform: translateZ(0) scale(1.7);
+  }
+  @supports (filter: url("#goo")) {
+    .blob-btn:hover .blob-btn__blob {
+      transform: translateZ(0) scale(1.4);
+    }
+  }
+

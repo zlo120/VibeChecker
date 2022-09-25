@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="../static/home.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <title>Vibechecker</title>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>vibeChecker</h1>
+        </div>
+
+        <div class="mains" ">
+           
+          <h1>A Revolutionary Way to Capture Candidates</h1>
+          <p>Simply answer a few questions and uncover the unknown></p>
+        </div>
+        <div class=" immm">
+            <img src="../static/assets/img1.jpg" height="400px"> </img>
+        </div>
+
+        <div class="buttons">
+            <button class="blob-btn">
+                Discover
+                <span class="blob-btn__inner">
+                    <span class="blob-btn__blobs">
+                        <span class="blob-btn__blob"></span>
+                        <span class="blob-btn__blob"></span>
+                        <span class="blob-btn__blob"></span>
+                        <span class="blob-btn__blob"></span>
+                    </span>
+                </span>
+            </button>
+            <br />
+
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+                <defs>
+                    <filter id="goo">
+                        <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10"></feGaussianBlur>
+                        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 21 -7"
+                            result="goo"></feColorMatrix>
+                        <feBlend in2="goo" in="SourceGraphic" result="mix"></feBlend>
+                    </filter>
+                </defs>
+            </svg>
+    </header>
+</body>
+
+</html>
