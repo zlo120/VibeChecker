@@ -1,8 +1,23 @@
 from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
+
+db = SQLAlchemy()
+
+def initialize_db():
+    app = Flask(__name__)
+    app.config['SECRET_KEY'] = 'AIzaSyDdkNpKFJt2n8M0gzbWp4q2LbJr1f73rso'
+    app.config['SQLALCHEMY_DATABASE_URI']  = 'sqlite:///site.db'   
+    from main import models
+    db.init_app(app)
+    return app, db
 
 def create_app():
     app = Flask(__name__)
     app.config['SECRET_KEY'] = 'AIzaSyDdkNpKFJt2n8M0gzbWp4q2LbJr1f73rso'
+    app.config['SQLALCHEMY_DATABASE_URI']  = 'sqlite:///site.db'   
+
+    from main import models
+    db.init_app(app)
 
     from . import routes
 
