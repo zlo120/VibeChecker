@@ -11,11 +11,17 @@
 </head>
 
 <body id="name" onload="myFunction(); ">
-    <!-- <div class="coverAll" id="coverAll">Loading...</div> -->
+    <div class="coverAll" id="coverAll">
+        <div id="center">
+            <img style="height: 40px;"
+                src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/35771931234507.564a1d2403b3a.gif" />
+            <h3>Gathering analytics...</h3>
+        </div>
+    </div>
 
     <header>
         <div class="heading" id="heading">
-            <h1 id="title">Sophie</h1>
+            <h1 id="title">Sophie INSERT NAME</h1>
             <h3 class="phonetic" id="phonetic">
                 <img id="icon" src="nothing" />
                 <span id="type-text"></span>
@@ -28,7 +34,7 @@
 
             <div class="vibe-check" id="vibe-check">
                 Is it a vibe?
-                <span>YEAH</span>
+                <span id="yahnah">YEAH</span>
             </div>
         </div>
     </header>
@@ -41,18 +47,48 @@
             tristique turpis. Aliquam fringilla ornare elit eu, imperdiet sit. Consectetur imperdiet vulputate massa
             iaculis egestas euismod.
         </p>
+
         <h2>
-            Skills
+            Strength
+        </h2>
+        <div class="skill" id="strength">Strength</div>
+
+        <h2>
+            Weakness
+        </h2>
+        <div class="skill" id="weakness">Weakness</div>
+
+        <h2>
+            Attributes
         </h2>
         <p>This character card has the following skills:</p>
-        <div class="skill">Studies</div>
-        <div class="skill">Can swim</div>
-        <div class="skill">Party animal</div>
-        <div class="skill">Quiet Quitter</div>
-        <div class="skill"></div>
-        <div class="skill"></div>
-        <div class="skill"></div>
-        <div class="skill"></div>
+        <div class="here">
+            <div class="skill att">Strength</div>
+            <div class="skill result">80</div>
+        </div>
+
+        <div class="here">
+            <div class="skill att">Intelligence</div>
+            <div class="skill result">80</div>
+        </div>
+
+        <div class="here">
+            <div class="skill att">Wealth</div>
+            <div class="skill result">80</div>
+        </div>
+
+        <div class="here">
+            <div class="skill att">Laziness</div>
+            <div class="skill result">80</div>
+        </div>
+
+        <div class="here">
+            <div class="skill att">Clumsiness</div>
+            <div class="skill result">80</div>
+        </div>
+
+        <label>URL</label>
+        <input type="text" readonly>
     </main>
     <footer>
         <p>Copyright</p>
@@ -60,16 +96,29 @@
 </body>
 
 <script>
-    //window.onload = function () {
-    //    setTimeout(function () {
-    //        const element = document.getElementById("coverAll");
-    //        element.remove();
-    //    }, 1000);
-    //};
+    setTimeout(
+        () => {
+            const element = document.getElementById("coverAll");
+            element.remove();
+        },
+        4 * 1000
+    );
 
     function myFunction() {
+        var yesno = ["YAH", "NAHHHH"];
+        var yesnonumber = Math.floor(Math.random() * 2);
+        if (yesno) {
+            document.getElementById("yahnah").innerHTML = yesno[yesnonumber];
+        }
         var types = ["Freedom Fighter", "Crypto King", "Social Justice Warrior", "Certified Chad", "Gym Junkie", "Tiktok Tart", "Netflix Ninja", "Socially Inadequate", "KAREN", "Dillusional Donut"];
-        var currentType = types[3];
+
+        // INSERT THE MATH RANDOM
+
+        //var number = Math.floor(Math.random() * 10);
+        //var currentType = types[number];
+        var currentType = types[0];
+
+
 
         const myElement = document.getElementById("heading");
 
@@ -82,6 +131,8 @@
                 document.getElementById("title").style.color = "#468B48";
                 document.getElementById("vibe-check").style.backgroundColor = "#468B48";
                 document.getElementById("vibe-check").style.color = "white";
+                document.getElementById("strength").style.backgroundColor = "#468B48";
+                document.getElementById("weakness").style.backgroundColor = "#468B48";
 
                 // Style for box shadow
                 var style = document.createElement('style');
@@ -119,6 +170,10 @@
                 // Add in image
                 document.getElementById("icon").src = "https://img.icons8.com/external-icongeek26-outline-icongeek26/64/000000/external-fist-martial-arts-icongeek26-outline-icongeek26.png";
 
+                // Strength Weakness
+                document.getElementById("strength").innerHTML = "Assumed Street Smart";
+                document.getElementById("weakness").innerHTML = "Medical Advice and Google Search";
+
                 break;
 
 
@@ -129,6 +184,8 @@
                 document.getElementById("title").style.color = "#2b9348";
                 document.getElementById("vibe-check").style.backgroundColor = "#2b9348";
                 document.getElementById("vibe-check").style.color = "white";
+                document.getElementById("strength").style.backgroundColor = "#2b9348";
+                document.getElementById("weakness").style.backgroundColor = "#2b9348";
 
                 // Style for box shadow
                 var style = document.createElement('style');
@@ -165,6 +222,10 @@
 
                 document.getElementById("title").style.color = "#468B48";
                 document.getElementById("icon").src = "https://i.imgur.com/uwRYQhy.png";
+
+                // Strength Weakness
+                document.getElementById("strength").innerHTML = "Investment confidence of a Conartist";
+                document.getElementById("weakness").innerHTML = "Sunlight";
                 break;
 
 
@@ -175,6 +236,8 @@
                 document.getElementById("title").style.color = "#3d0066";
                 document.getElementById("vibe-check").style.backgroundColor = "#3d0066";
                 document.getElementById("vibe-check").style.color = "white";
+                document.getElementById("strength").style.backgroundColor = "#3d0066";
+                document.getElementById("weakness").style.backgroundColor = "#3d0066";
 
                 // Style for box shadow
                 var style = document.createElement('style');
@@ -210,6 +273,11 @@
                 document.head.appendChild(style);
 
                 document.getElementById("icon").src = "https://img.icons8.com/external-prettycons-lineal-prettycons/49/000000/external-justice-security-prettycons-lineal-prettycons.png";
+
+                // Strength Weakness
+                document.getElementById("strength").innerHTML = "Coloured Hair";
+                document.getElementById("weakness").innerHTML = "Coloured Hair";
+
                 break;
 
 
@@ -222,6 +290,8 @@
                 document.getElementById("type-text").style.color = "#225560";
                 document.getElementById("vibe-check").style.backgroundColor = "#225560";
                 document.getElementById("vibe-check").style.color = "white";
+                document.getElementById("strength").style.backgroundColor = "#225560";
+                document.getElementById("weakness").style.backgroundColor = "#225560";
 
                 // Style for box shadow
                 var style = document.createElement('style');
@@ -257,6 +327,11 @@
                 document.head.appendChild(style);
 
                 document.getElementById("icon").src = "https://i.imgur.com/HdjRNlz.png";
+
+                // Strength Weakness
+                document.getElementById("strength").innerHTML = "Steroids.... Do you even inject bruh";
+                document.getElementById("weakness").innerHTML = "Woman and Relationships";
+
                 break;
 
 
@@ -268,6 +343,8 @@
                 document.getElementById("type-text").style.color = "#3841C7";
                 document.getElementById("vibe-check").style.backgroundColor = "#3841C7";
                 document.getElementById("vibe-check").style.color = "white";
+                document.getElementById("strength").style.backgroundColor = "#3841C7";
+                document.getElementById("weakness").style.backgroundColor = "#3841C7";
 
                 // Style for box shadow
                 var style = document.createElement('style');
@@ -303,6 +380,10 @@
                 document.head.appendChild(style);
 
                 document.getElementById("icon").src = "https://i.imgur.com/aiSWcbG.png";
+
+                // Strength Weakness
+                document.getElementById("strength").innerHTML = "Pectoral Strength";
+                document.getElementById("weakness").innerHTML = "Legz";
                 break;
 
             // Tiktok
@@ -313,6 +394,8 @@
                 document.getElementById("type-text").style.color = "#0C5E9B";
                 document.getElementById("vibe-check").style.backgroundColor = "#0C5E9B";
                 document.getElementById("vibe-check").style.color = "white";
+                document.getElementById("strength").style.backgroundColor = "#0C5E9B";
+                document.getElementById("weakness").style.backgroundColor = "#0C5E9B";
 
                 // Style for box shadow
                 var style = document.createElement('style');
@@ -350,6 +433,9 @@
 
                 document.getElementById("icon").src = "https://i.imgur.com/1dkti4o.png";
 
+                // Strength Weakness
+                document.getElementById("strength").innerHTML = "Impeccable Dancing Skills";
+                document.getElementById("weakness").innerHTML = "Real World Skills";
                 break;
 
             // Netflix
@@ -360,6 +446,8 @@
                 document.getElementById("type-text").style.color = "#fa2a2a";
                 document.getElementById("vibe-check").style.backgroundColor = "#fa2a2a";
                 document.getElementById("vibe-check").style.color = "white";
+                document.getElementById("strength").style.backgroundColor = "#fa2a2a";
+                document.getElementById("weakness").style.backgroundColor = "#fa2a2a";
 
                 // Style for box shadow
                 var style = document.createElement('style');
@@ -395,6 +483,10 @@
                 document.head.appendChild(style);
 
                 document.getElementById("icon").src = "https://i.imgur.com/xGDgjub.jpg";
+
+                // Strength Weakness
+                document.getElementById("strength").innerHTML = "Binger";
+                document.getElementById("weakness").innerHTML = "A Healthy Sleep Schedule";
                 break;
 
             // Socially Inadequate
@@ -405,6 +497,8 @@
                 document.getElementById("type-text").style.color = "#814B72";
                 document.getElementById("vibe-check").style.backgroundColor = "#814B72";
                 document.getElementById("vibe-check").style.color = "white";
+                document.getElementById("strength").style.backgroundColor = "#814B72";
+                document.getElementById("weakness").style.backgroundColor = "#814B72";
 
                 // Style for box shadow
                 var style = document.createElement('style');
@@ -440,6 +534,11 @@
                 document.head.appendChild(style);
 
                 document.getElementById("icon").src = "https://i.imgur.com/ztxp2Pr.png";
+
+                // Strength Weakness
+                document.getElementById("strength").innerHTML = "League of Legends";
+                document.getElementById("weakness").innerHTML = "Social Interaction";
+
                 break;
 
             // Karen
@@ -450,7 +549,8 @@
                 document.getElementById("type-text").style.color = "#FF305A";
                 document.getElementById("vibe-check").style.backgroundColor = "#FF305A";
                 document.getElementById("vibe-check").style.color = "white";
-
+                document.getElementById("strength").style.backgroundColor = "#FF305A";
+                document.getElementById("weakness").style.backgroundColor = "#FF305A";
 
                 // Style for box shadow
                 var style = document.createElement('style');
@@ -485,6 +585,10 @@
                 document.head.appendChild(style);
 
                 document.getElementById("icon").src = "https://i.imgur.com/ZcmISws.png";
+
+                // Strength Weakness
+                document.getElementById("strength").innerHTML = "Public speaking, Extensive knowledge, Grammar ";
+                document.getElementById("weakness").innerHTML = "Policies and Procedures";
                 break;
 
             // Dillusional
@@ -493,6 +597,8 @@
                 document.getElementById("heading").style.backgroundColor = "#D5CBFF";
                 document.getElementById("title").style.color = "#6AC3FF";
                 document.getElementById("type-text").style.color = "#6AC3FF";
+                document.getElementById("strength").style.backgroundColor = "#6AC3FF";
+                document.getElementById("weakness").style.backgroundColor = "#6AC3FF";
                 document.getElementById("vibe-check").style.backgroundColor = "#6AC3FF";
                 document.getElementById("vibe-check").style.color = "white";
 
@@ -530,6 +636,12 @@
                 document.head.appendChild(style);
 
                 document.getElementById("icon").src = "https://i.imgur.com/PJ3mtoF.png";
+
+                // Strength Weakness
+                document.getElementById("strength").innerHTML = "Nothing";
+                document.getElementById("weakness").innerHTML = "Everything";
+
+
                 break;
             default:
                 document.getElementById("type-text").innerHTML = "Boring";
