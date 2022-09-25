@@ -12,7 +12,7 @@ class CryptoKing:
         self.wealth = randint(0,10)
         self.laziness = randint(4,8)
         self.clumsiness = randint(0,10)
-        self.URL = ID = '5' + ''.join(choice(ascii_letters) for i in range(6))
+        self.URL = ID = '1' + ''.join(choice(ascii_letters) for i in range(6))
         
 class FreedomFighter:
     def __init__(self, name):
@@ -22,7 +22,7 @@ class FreedomFighter:
         self.wealth = randint(2,6)
         self.laziness = randint(0,3)
         self.clumsiness = randint(0,4)
-        self.URL = ID = '5' + ''.join(choice(ascii_letters) for i in range(6))
+        self.URL = ID = '2' + ''.join(choice(ascii_letters) for i in range(6))
 
 class SJW:
     def __init__(self, name):
@@ -32,7 +32,7 @@ class SJW:
         self.wealth = randint(2,6)
         self.laziness = randint(0,6)
         self.clumsiness = randint(3,10)
-        self.URL = ID = '5' + ''.join(choice(ascii_letters) for i in range(6))
+        self.URL = ID = '3' + ''.join(choice(ascii_letters) for i in range(6))
 
 class CertifiedChad:
     def __init__(self, name):
@@ -42,7 +42,7 @@ class CertifiedChad:
         self.wealth = randint(0,10)
         self.laziness = randint(0,6)
         self.clumsiness = randint(2,10)
-        self.URL = ID = '5' + ''.join(choice(ascii_letters) for i in range(6))
+        self.URL = ID = '4' + ''.join(choice(ascii_letters) for i in range(6))
 
 class GymJunkie:
     def __init__(self, name):
@@ -62,7 +62,7 @@ class TiktokTart:
         self.wealth = randint(0,6)
         self.laziness = randint(5,10)
         self.clumsiness = randint(3,10)
-        self.URL = ID = '5' + ''.join(choice(ascii_letters) for i in range(6))
+        self.URL = ID = '6' + ''.join(choice(ascii_letters) for i in range(6))
 
 class NetflixNinja:
     def __init__(self, name):
@@ -72,7 +72,7 @@ class NetflixNinja:
         self.wealth = randint(0,6)
         self.laziness = randint(5,10)
         self.clumsiness = randint(3,10)
-        self.URL = ID = '5' + ''.join(choice(ascii_letters) for i in range(6)) 
+        self.URL = ID = '7' + ''.join(choice(ascii_letters) for i in range(6)) 
 
 class SociallyInadequate:
     def __init__(self, name):
@@ -82,7 +82,7 @@ class SociallyInadequate:
         self.wealth = randint(0,6)
         self.laziness = randint(5,10)
         self.clumsiness = randint(6,10)
-        self.URL = ID = '5' + ''.join(choice(ascii_letters) for i in range(6))
+        self.URL = ID = '8' + ''.join(choice(ascii_letters) for i in range(6))
 
 class Karen:
     def __init__(self, name):
@@ -92,7 +92,7 @@ class Karen:
         self.wealth = randint(4,10)
         self.laziness = randint(0,10)
         self.clumsiness = randint(0,10)
-        self.URL = ID = '5' + ''.join(choice(ascii_letters) for i in range(6))
+        self.URL = ID = '9' + ''.join(choice(ascii_letters) for i in range(6))
 
 class DelusionalDonut:
     def __init__(self, name):
@@ -102,4 +102,4 @@ class DelusionalDonut:
         self.wealth = randint(0,8)
         self.laziness = randint(5,10)
         self.clumsiness = randint(5,10)
-        self.URL = ID = '5' + ''.join(choice(ascii_letters) for i in range(6))
+        self.URL = ID = '10' + ''.join(choice(ascii_letters) for i in range(6))
