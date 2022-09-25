@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="stylesheet" href="../static/index.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <title>Vibechecker</title>
+</head>
+
+<body id="name" onload="myFunction()">
+    <header>
+        <div class="heading" id="heading">
+            <h1 id="title">Sophie</h1>
+            <h3 class="phonetic" id="phonetic">
+                <img id="icon" src="nothing" />
+                <span id="type-text"></span>
+            </h3>
+
+            <div class="gif">
+                <img class="profile-pic"
+                    src="{{url}}" />
+            </div>
+
+            <div class="vibe-check">
+                Is it a vibe?
+                <span>YEAH</span>
+            </div>
+        </div>
+    </header>
+    <main>
+        <h2>
+            Bio
+        </h2>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Odio convallis sagittis libero pellentesque integer
+            tristique turpis. Aliquam fringilla ornare elit eu, imperdiet sit. Consectetur imperdiet vulputate massa
+            iaculis egestas euismod.
+        </p>
+        <h2>
+            Skills
+        </h2>
+        <p>This character card has the following skills:</p>
+        <div class="skill">Studies</div>
+        <div class="skill">Can swim</div>
+        <div class="skill">Party animal</div>
+        <div class="skill">Quiet Quitter</div>
+        <div class="skill"></div>
+        <div class="skill"></div>
+        <div class="skill"></div>
+        <div class="skill"></div>
+    </main>
+    <footer>
+        <p>Copyright</p>
+    </footer>
+</body>
+
+<script>
+
+    function myFunction() {
+        var types = ["Freedom Fighter", "Crypto King", "Social Justice Warrior", "Certified Chad", "Gym Junkie", "Tiktok Tart", "Netflix Ninja", "Socially Inadequate", "KAREN", "Dillusional Donut"];
+        var currentType = types[8];
+
+        const myElement = document.getElementById("heading");
+
+        // Altering the styles based on the Type of Character they are
+        switch (currentType) {
+            // Freedom
+            case types[0]:
+                document.getElementById("type-text").innerHTML = "Freedom Fighter";
+                document.getElementById("heading").style.backgroundColor = "#6cff8c";
+                document.getElementById("title").style.color = "#468B48";
+
+                // Style for box shadow
+                var style = document.createElement('style');
+                style.innerHTML = `
+                .gif img {
+                    box-shadow: 0 0 #468B48;
+                    transition: box-shadow 1s;
+                }
+                
+                .gif img:hover {
+                    box-shadow: 10px 10px #468B48;
+                    transition: box-shadow 1s;
+                }
+                `;
+                document.head.appendChild(style);
+
+                // Add in image
+                document.getElementById("icon").src = "https://img.icons8.com/external-icongeek26-outline-icongeek26/64/000000/external-fist-martial-arts-icongeek26-outline-icongeek26.png";
+
+                break;
+
+
+            // Crypto
+            case types[1]:
+                document.getElementById("type-text").innerHTML = "Crypto King";
+                document.getElementById("heading").style.backgroundColor = "#fff056";
+                document.getElementById("title").style.color = "#2b9348";
+
+                // Style for box shadow
+                var style = document.createElement('style');
+                style.innerHTML = `
+                .gif img {
+                    box-shadow: 0 0 #2b9348;
+                    transition: box-shadow 1s;
+                }
+                
+                .gif img:hover {
+                    box-shadow: 10px 10px #2b9348;
+                    transition: box-shadow 1s;
+                }
+                `;
+                document.head.appendChild(style);
+
+                document.getElementById("title").style.color = "#468B48";
+                document.getElementById("icon").src = "https://i.imgur.com/uwRYQhy.png";
+                break;
+
+
+            // Social
+            case types[2]:
+                document.getElementById("type-text").innerHTML = "Social Justice Warrior";
+                document.getElementById("heading").style.backgroundColor = "#c86bfa";
+                document.getElementById("title").style.color = "#3d0066";
+
+                // Style for box shadow
+                var style = document.createElement('style');
+                style.innerHTML = `
+                .gif img {
+                    box-shadow: 0 0 #3d0066;
+                    transition: box-shadow 1s;
+                }
+                
+                .gif img:hover {
+                    box-shadow: 10px 10px #3d0066;
+                    transition: box-shadow 1s;
+                }
+                `;
+                document.head.appendChild(style);
+
+                document.getElementById("icon").src = "https://img.icons8.com/external-prettycons-lineal-prettycons/49/000000/external-justice-security-prettycons-lineal-prettycons.png";
+                break;
+
+
+
+            // Chad
+            case types[3]:
+                document.getElementById("type-text").innerHTML = "Certified Chad";
+                document.getElementById("heading").style.backgroundColor = "#50ffc8";
+                document.getElementById("title").style.color = "#225560";
+
+                // Style for box shadow
+                var style = document.createElement('style');
+                style.innerHTML = `
+                .gif img {
+                    box-shadow: 0 0 #00A370;
+                    transition: box-shadow 1s;
+                }
+                
+                .gif img:hover {
+                    box-shadow: 10px 10px #00A370;
+                    transition: box-shadow 1s;
+                }
+                `;
+                document.head.appendChild(style);
+
+                document.getElementById("icon").src = "https://i.imgur.com/HdjRNlz.png";
+                break;
+
+
+            // Gym
+            case types[4]:
+                document.getElementById("type-text").innerHTML = "Gym Junkie";
+                document.getElementById("heading").style.backgroundColor = "#50a2ff";
+
+                document.getElementById("icon").src = "https://i.imgur.com/aiSWcbG.png";
+                break;
+            // Tiktok
+            case types[5]:
+                document.getElementById("type-text").innerHTML = "Tiktok Tart";
+                document.getElementById("heading").style.backgroundColor = "#ff509c";
+
+                document.getElementById("icon").src = "https://i.imgur.com/1dkti4o.png";
+
+                break;
+            // Netflix
+            case types[6]:
+                document.getElementById("type-text").innerHTML = "Netflix";
+                document.getElementById("heading").style.backgroundColor = "#000000";
+
+                document.getElementById("icon").src = "https://i.imgur.com/xGDgjub.jpg";
+                break;
+
+            // Socially Inadequate
+            case types[7]:
+                document.getElementById("type-text").innerHTML = "Socially Inadequate";
+                document.getElementById("heading").style.backgroundColor = "#F5AC67";
+
+                document.getElementById("icon").src = "https://i.imgur.com/ztxp2Pr.png";
+                break;
+
+            // Karen
+            case types[8]:
+                document.getElementById("type-text").innerHTML = "KAREN";
+                document.getElementById("heading").style.backgroundColor = "#A8DCD1";
+                document.getElementById("title").style.color = "#FF305A";
+
+                document.getElementById("icon").src = "https://i.imgur.com/ZcmISws.png";
+                break;
+
+            // Dillusional
+            case types[9]:
+                document.getElementById("type-text").innerHTML = "Dillusional Donut";
+                document.getElementById("heading").style.backgroundColor = "#F5AC67";
+
+                document.getElementById("icon").src = "https://i.imgur.com/xGDgjub.jpg";
+                break;
+            default:
+                document.getElementById("type-text").innerHTML = "Boring";
+                document.getElementById("heading").style.backgroundColor = "#F5AC67";
+
+                document.getElementById("icon").src = "https://img.icons8.com/external-icongeek26-outline-icongeek26/64/000000/external-fist-martial-arts-icongeek26-outline-icongeek26.png";
+                break;
+        }
+    }
+</script>
+
+</html>

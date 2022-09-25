@@ -10,3 +10,5 @@ class Cards(db.Model):
     Wealth = db.Column(db.Integer, nullable = False)
     Laziness = db.Column(db.Integer, nullable = False)
     Clumsiness = db.Column(db.Integer, nullable = False)
+    isAVibe = db.Column(db.Integer, nullable = False)
+    URLCode = db.Column(db.String(256), nullable = False, unique = True)

@@ -9,6 +9,8 @@ class CryptoKing:
         self.laziness = randint(4,8)
         self.clumsiness = randint(0,10)
 
+    
+
 class FreedomFighter:
     def __init__(self, name):
         self.name = name

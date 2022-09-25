@@ -1,23 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <title>Form</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="{{ url_for('static', filename='form.css') }}">
+
 </head>
+
 <body>
-    
-    <input type="text" id="one" name="fname">
-    <input type="text" id="two" name="tname">
-    <input type="text" id="three" name="sname">
-    <input type="text" id="four" name="xname">
-    <button text="click me" onclick="sendRequest()">Click me</button>
+  <div class="wrapper">
+    <form class="form">
+      <div class="pageTitle title">Analytics Engine Form</div>
+      <div class="secondaryTitle title">Please fill this form truthfully as our analytics engine relies on precise measurements.</div>
+      <input type="text" class="name formEntry" placeholder="Name" />
+      <select name="DOB" id="DOB" class="dob formEntry">
+        <option value="" disabled selected>DOB</option>
+        <option value="This page is for the big bois">Do you have your mummy's permission to use this site?</option>
+        <option value="2003">2003</option>
+        <option value="2002">2002</option>
+        <option value="2001">2001</option>
+        <option value="2000">2000</option>
+        <option value="1999">1999</option>
+        <option value="1998">1998</option>
+        <option value="1997">1997</option>
+        <option value="1996">1996</option>
+        <option value="1995">1995</option>
+        <option value="1994">1994</option>
+        <option value="1993">1993</option>
+        <option value="1992">1992</option>
+        <option value="Old">Have you taken your pills?</option>
+      </select>
 
-</body>
+      <select name="Starsign" id="Starsign" class="dob formEntry">
+        <option value="" disabled selected>Starsign</option>
+        <option value="Grow Up">Grow Up</option>
+      </select>
+      
+      <select name="Height" id="Height" class="dob formEntry">
+        <option value="" disabled selected>Height - in Metric of course you animal</option>
+        <option value="Tall">Shaq's Long Lost Cousin</option>
+        <option value="180">180cm</option>
+        <option value="179">179cm</option>
+        <option value="178">178cm</option>
+        <option value="177">177cm</option>
+        <option value="176">176cm</option>
+        <option value="175">175cm</option>
+        <option value="174">174cm</option>
+        <option value="173">173cm</option>
+        <option value="172">172cm</option>
+        <option value="171">171cm</option>
+        <option value="170">170cm</option>
+        <option value="169">169cm</option>
+        <option value="168">168cm</option>
+        <option value="167">167cm</option>
+        <option value="166">166cm</option>
+        <option value="165">165cm</option>
+        <option value="164">164cm</option>
+        <option value="163">163cm</option>
+        <option value="162">162cm</option>
+        <option value="161">161cm</option>
+        <option value="160">160cm</option>
+        <option value="Short">Childhood Malnourishment</option>
 
-<script>
+      </select>
+
+      <select name="Hair" id="Hair" class="dob formEntry">
+        <option value="" disabled selected>Hair Colour</option>
+        <option value="Blonde">Blonde</option>
+        <option value="Brunette">Brunette</option>
+        <option value="Redhead">Redhead</option>
+        <option value="Black">Black</option>
+        <option value="RGB">RGB</option>
+      </select>
+
+      <select name="Eye" id="Eye" class="dob formEntry">
+        <option value="" disabled selected>Eye Colour</option>
+        <option value="Blue">Blue</option>
+        <option value="Hazel">Hazel</option>
+        <option value="Amber">Amber</option>
+        <option value="Brown">Brown</option>
+        <option value="Grey">Grey</option>
+        <option value="Green">Green</option>
+        <option value="Mordor">Mordor</option>
+      </select>
+
+      <select name="Braces" id="Braces" class="dob formEntry">
+        <option value="" disabled selected>Braces</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+      </select>
+
+      <select name="Glasses" id="Glasses" class="dob formEntry">
+        <option value="" disabled selected>Glasses</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+      </select>
+
+      <select name="Marital" id="Marital" class="dob formEntry">
+        <option value="" disabled selected>Martial Status</option>
+        <option value="Married">Married</option>
+        <option value="Single">Single</option>
+        <option value="Divorced">Divorced</option>
+        <option value="It's Complicated">It's Complicated</option>
+      </select>
+
+      <select name="Degree" id="Degree" class="dob formEntry">
+        <option value="" disabled selected>Degree</option>
+        <option value="Law">Law</option>
+        <option value="Medicine">Medicine</option>
+        <option value="Arts">Arts</option>
+        <option value="Education">Education</option>
+        <option value="Design">Design</option>
+        <option value="Sciences">Sciences</option>
+        <option value="Engineering">Engineering</option>
+        <option value="Entrepreneur">Entrepreneur</option>
+      </select>
+
+      <select name="Pet" id="Pet" class="dob formEntry">
+        <option value="" disabled selected>Cat or Dog</option>
+        <option value="Cat">Cat</option>
+        <option value="Dog">Dog</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <select name="NFT" id="NFT" class="dob formEntry">
+        <option value="" disabled selected>Do you own NFT?</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+      </select>
+
+      <select name="LorR" id="LorR" class="dob formEntry">
+        <option value="" disabled selected>Left or Right Handed?</option>
+        <option value="Left">Left</option>
+        <option value="Right">Right</option>
+        <option value="Both">Ambidextrous a.k.a Liar</option>
+      </select>
+
+      <select name="Tongue" id="Tongue" class="dob formEntry">
+        <option value="" disabled selected>Roll Tongue Ability?</option>
+        <option value="Senor/Senorita">Senor/Senorita</option>
+        <option value="No">No</option>
+      </select>
+
+      <select name="Tesla" id="Tesla" class="dob formEntry">
+        <option value="" disabled selected>Do you own a Tesla?</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+      </select>
+
+      <select name="Vegan" id="Vegan" class="dob formEntry">
+        <option value="" disabled selected>Are you a Vegan?</option>
+        <option value="Yes">Yes</option>
+        <option value="Healthy">Healthy</option>
+      </select>
+
+      <select name="Rust" id="Rust" class="dob formEntry">
+        <option value="" disabled selected>Do you like Rust?</option>
+        <option value="Negative">Negative</option>
+        <option value="No">No</option>
+        <option value="Nein">Nein</option>
+        <option value="Nope">Nope</option>
+      </select>
+
+    <br></br>
+      <input type="checkbox" class="termsConditions" value="Term">
+      <label style="color: grey" for="terms"> I Accept the <span style="color: #0e3721">Terms of Use</span> & <span style="color: #0e3721">Privacy Policy</span>.</label><br>
+      <button class="submit formEntry" onclick="thanks()">Submit</button>
+    </form>
+  </div>
+  <script src="app.js"></script>
+  <script>
 
     function postData() {
     (async () => {
@@ -28,25 +182,25 @@
         'Content-Type': 'application/json'
         },
         body: JSON.stringify( {
-        /* data */
-        'name' : $("#one").val(),
-        'DOB' : $("#one").val(),
-        'astrology' : $("#one").val(),
-        'height' : $("#one").val(),
-        'hair colour' : $("#one").val(),
-        'eye colour' : $("#one").val(),
-        'braces' : $("#one").val(),
-        'glasses' : $("#one").val(),
-        'marital status' : $("#one").val(),
-        'roll tongue ability' : $("#one").val(),
-        'dominant hand' : $("#one").val(),
-        'check to be a robot' : $("#one").val()
-    } )
+            /* data */
+            'name' : $("#one").val(),
+            'DOB' : $("#one").val(),
+            'astrology' : $("#one").val(),
+            'height' : $("#one").val(),
+            'hair colour' : $("#one").val(),
+            'eye colour' : $("#one").val(),
+            'braces' : $("#one").val(),
+            'glasses' : $("#one").val(),
+            'marital status' : $("#one").val(),
+            'roll tongue ability' : $("#one").val(),
+            'dominant hand' : $("#one").val(),
+            'check to be a robot' : $("#one").val()
+        })
     });
-    const content = await rawResponse.json();
-    console.log(content);
-    })();
-}
+        const content = await rawResponse.json();
+        console.log(content);
+        })();
+    }
 
     function sendRequest() {
         if($("#one").val() == '' ||
@@ -60,5 +214,6 @@
     }
 
 </script>
+</body>
 
 </html>

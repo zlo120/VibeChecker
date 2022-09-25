@@ -7,6 +7,6 @@ def getGif(query):
         print("sucessfully fetched the data")
         response = response.json()
         first_res = response['results'][0]["media_formats"]["gif"]["url"]
-        print(first_res)
+        return first_res
     else:
         print(f"Hello person, there's a {response.status_code} error with your request")
