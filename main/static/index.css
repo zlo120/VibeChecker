@@ -111,6 +111,10 @@ h3 {
     padding-left: 8%;
 }
 
+#icon {
+    margin-right: 10px !important;
+}
+
 .heading h3 {
     vertical-align: top;
     /* line-height: 100px; */
