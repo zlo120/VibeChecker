@@ -10,7 +10,9 @@
     <title>Vibechecker</title>
 </head>
 
-<body id="name" onload="myFunction()">
+<body id="name" onload="myFunction(); ">
+    <!-- <div class="coverAll" id="coverAll">Loading...</div> -->
+
     <header>
         <div class="heading" id="heading">
             <h1 id="title">Sophie</h1>
@@ -58,9 +60,16 @@
 </body>
 
 <script>
+    //window.onload = function () {
+    //    setTimeout(function () {
+    //        const element = document.getElementById("coverAll");
+    //        element.remove();
+    //    }, 1000);
+    //};
+
     function myFunction() {
         var types = ["Freedom Fighter", "Crypto King", "Social Justice Warrior", "Certified Chad", "Gym Junkie", "Tiktok Tart", "Netflix Ninja", "Socially Inadequate", "KAREN", "Dillusional Donut"];
-        var currentType = types[5];
+        var currentType = types[3];
 
         const myElement = document.getElementById("heading");
 
@@ -150,6 +159,7 @@
                 document.getElementById("type-text").innerHTML = "Certified Chad";
                 document.getElementById("heading").style.backgroundColor = "#50ffc8";
                 document.getElementById("title").style.color = "#225560";
+                document.getElementById("type-text").style.color = "#225560";
 
                 // Style for box shadow
                 var style = document.createElement('style');
@@ -174,21 +184,74 @@
             case types[4]:
                 document.getElementById("type-text").innerHTML = "Gym Junkie";
                 document.getElementById("heading").style.backgroundColor = "#50a2ff";
+                document.getElementById("title").style.color = "#356ee8";
+                document.getElementById("type-text").style.color = "#356ee8";
+
+                // Style for box shadow
+                var style = document.createElement('style');
+                style.innerHTML = `
+                .gif img {
+                    box-shadow: 0 0 #468B48;
+                    transition: box-shadow 1s;
+                }
+                
+                .gif img:hover {
+                    box-shadow: 10px 10px #468B48;
+                    transition: box-shadow 1s;
+                }
+                `;
+                document.head.appendChild(style);
 
                 document.getElementById("icon").src = "https://i.imgur.com/aiSWcbG.png";
                 break;
+
             // Tiktok
             case types[5]:
                 document.getElementById("type-text").innerHTML = "Tiktok Tart";
                 document.getElementById("heading").style.backgroundColor = "#ff509c";
+                document.getElementById("title").style.color = "#356ee8";
+                document.getElementById("type-text").style.color = "#356ee8";
+
+                // Style for box shadow
+                var style = document.createElement('style');
+                style.innerHTML = `
+                    .gif img {
+                        box-shadow: 0 0 #356ee8;
+                        transition: box-shadow 1s;
+                    }
+                    
+                    .gif img:hover {
+                        box-shadow: 10px 10px #356ee8;
+                        transition: box-shadow 1s;
+                    }
+                    `;
+                document.head.appendChild(style);
 
                 document.getElementById("icon").src = "https://i.imgur.com/1dkti4o.png";
 
                 break;
+
             // Netflix
             case types[6]:
                 document.getElementById("type-text").innerHTML = "Netflix";
                 document.getElementById("heading").style.backgroundColor = "#000000";
+                document.getElementById("title").style.color = "#fa2a2a";
+                document.getElementById("type-text").style.color = "#fa2a2a";
+
+                // Style for box shadow
+                var style = document.createElement('style');
+                style.innerHTML = `
+                .gif img {
+                    box-shadow: 0 0 #fa2a2a;
+                    transition: box-shadow 1s;
+                }
+                
+                .gif img:hover {
+                    box-shadow: 10px 10px #fa2a2a;
+                    transition: box-shadow 1s;
+                }
+                `;
+                document.head.appendChild(style);
 
                 document.getElementById("icon").src = "https://i.imgur.com/xGDgjub.jpg";
                 break;
@@ -197,6 +260,23 @@
             case types[7]:
                 document.getElementById("type-text").innerHTML = "Socially Inadequate";
                 document.getElementById("heading").style.backgroundColor = "#F5AC67";
+                document.getElementById("title").style.color = "#fa2a2a";
+                document.getElementById("type-text").style.color = "#fa2a2a";
+
+                // Style for box shadow
+                var style = document.createElement('style');
+                style.innerHTML = `
+                .gif img {
+                    box-shadow: 0 0 #468B48;
+                    transition: box-shadow 1s;
+                }
+                
+                .gif img:hover {
+                    box-shadow: 10px 10px #468B48;
+                    transition: box-shadow 1s;
+                }
+                `;
+                document.head.appendChild(style);
 
                 document.getElementById("icon").src = "https://i.imgur.com/ztxp2Pr.png";
                 break;
@@ -206,6 +286,23 @@
                 document.getElementById("type-text").innerHTML = "KAREN";
                 document.getElementById("heading").style.backgroundColor = "#A8DCD1";
                 document.getElementById("title").style.color = "#FF305A";
+                document.getElementById("type-text").style.color = "#FF305A";
+
+
+                // Style for box shadow
+                var style = document.createElement('style');
+                style.innerHTML = `
+                .gif img {
+                    box-shadow: 0 0 #FF305A;
+                    transition: box-shadow 1s;
+                }
+                
+                .gif img:hover {
+                    box-shadow: 10px 10px #FF305A;
+                    transition: box-shadow 1s;
+                }
+                `;
+                document.head.appendChild(style);
 
                 document.getElementById("icon").src = "https://i.imgur.com/ZcmISws.png";
                 break;
@@ -213,9 +310,26 @@
             // Dillusional
             case types[9]:
                 document.getElementById("type-text").innerHTML = "Dillusional Donut";
-                document.getElementById("heading").style.backgroundColor = "#F5AC67";
+                document.getElementById("heading").style.backgroundColor = "#D5CBFF";
+                document.getElementById("title").style.color = "#6AC3FF";
+                document.getElementById("type-text").style.color = "#6AC3FF";
 
-                document.getElementById("icon").src = "https://i.imgur.com/xGDgjub.jpg";
+                // Style for box shadow
+                var style = document.createElement('style');
+                style.innerHTML = `
+                .gif img {
+                    box-shadow: 0 0 #6AC3FF;
+                    transition: box-shadow 1s;
+                }
+                
+                .gif img:hover {
+                    box-shadow: 10px 10px #6AC3FF;
+                    transition: box-shadow 1s;
+                }
+                `;
+                document.head.appendChild(style);
+
+                document.getElementById("icon").src = "https://i.imgur.com/PJ3mtoF.png";
                 break;
             default:
                 document.getElementById("type-text").innerHTML = "Boring";
