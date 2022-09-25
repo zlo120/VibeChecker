@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif !important;
+    margin: 0;
+    /* Select no text */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: url('./images/normal.png'), default;
+}
+
+@media (min-width: 700px) {
+    body {
+        width: 50%;
+        margin: auto;
+    }
+}
+
+nav {
+    background-color: #662C91;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 30px;
+    width: 100%;
+    justify-content: center;
+    margin: 0;
+    color: white;
+    font-size: 1.2rem;
+    font-family: 'Azeret Mono', sans-serif !important;
+    font-weight: 300;
+}
+
+nav a {
+    font-size: 0.7em;
+}
+
+.skill {
+    background-color: #915fb7;
+    color: white;
+    font-size: 1.3rem;
+    font-weight: 400;
+    height: 30px;
+    width: 95%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    padding-left: 5%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    transition: background-color 1s;
+    transition: font-size 1s;
+}
+
+.rank:hover{
+    background-color: #5a3378;
+    font-size: 1.8em;
+    transition: background-color 1s;
+    transition: font-size 1s;
+}
+
+.logo {
+    font-weight: 600;
+    font-size: 1em;
+}
+
+main {
+    padding: 30px;
+    width: 80%;
+    margin: auto;
+    /* padding-top: 350px; */
+}
+
+h2 {
+    font-size: 1.3em !important;
+    color: #2e1541;
+}
+
+h3 {
+    padding: 0 0 2% 10%;
+}
+
+#name p {
+    margin-top: 5%;
+    font-weight: 300 !important;
+    font-size: 0.9em !important;
+    width: 100%;
+    line-height: 1.7em;
+    margin-bottom: 50px;
+}
+
+.phonetic {
+    font-weight: 600;
+    color: #4a2808;
+    padding-left: 8%;
+}
+
+.heading h3 {
+    vertical-align: top;
+    /* line-height: 100px; */
+}
+
+.phonetic img {
+    height: 40px;
+    vertical-align: middle;
+}
+
+
+.heading {
+    width: 100%;
+    background-color: #F5AC67;
+    /* background-color: #6cff8c; */
+    padding-bottom: 7%;
+	/* background: linear-gradient(-45deg, #F5AC67, #f97549, #f65145, #f5ae3d);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite; */
+}
+
+/* @keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+} */
+
+.gif img {
+    display:block;
+    margin:auto;
+    border: 15px white solid;
+    border-radius: 5px;
+    box-shadow: none;
+    margin-bottom: 8%;
+}
+
+.profile-pic {
+    width: 80%;
+    text-align: center;
+}
+
+.vibe-check {
+    font-family: 'Azeret Mono', sans-serif !important;
+    width: 80%;
+    margin: auto;
+    background-color: rgb(138, 247, 136);
+    padding: 5% 0 5% 5%;
+    border-radius: 20px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #1e1e1e;
+    box-shadow: none;    
+    cursor: url('./images/minimal-lightning-cursor-c.cur.png'), default;
+    transition: 1s;
+
+    /* transition: background-color 1s; */
+}
+
+	/* background: linear-gradient(-45deg, #F5AC67, #f97549, #f65145, #f5ae3d);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite; */
+
+/* @keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+} */
+
+.vibe-check:hover {
+    background-color: rgb(184, 255, 91);
+    box-shadow: 5px 5px white;
+    /* text-decoration: solid 2px underline; */
+    transition: 1s;
+    background: linear-gradient(45deg, #A5F494, #6fff00, #6ae0f3, #4979ff);
+	background-size: 400% 400%;
+	animation: gradient 5s ease infinite;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+/* INSERT IT AFTER A CERTAIN WIDTH */
+
+.gif {
+    padding-top: 10px;
+    width: 100%;
+}
+
+.heading h1 {
+    font-family: 'Azeret Mono', sans-serif !important;
+    color: white;
+    padding: 10% 0 5px 8%;
+    margin: 0 !important;
+    font-weight: 600;
+}
+
+header {
+    /* position: fixed; */
+    width: 100%;
+}
+
+
+footer {
+    background-color: #2e1541;
+    color: white;
+    bottom: 0;
+    padding: 20px;
+}
