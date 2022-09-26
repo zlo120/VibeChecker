@@ -11,6 +11,7 @@ Werkzeug==2.2.2
 WTForms==3.0.1
 zipp==3.8.1
 requests==2.28.1
+psycopg2==2.9.3
 # we also need webserver (refered to in heroku Procfile)
 
 gunicorn==20.1.0
