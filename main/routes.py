@@ -2,7 +2,7 @@ from inspect import Attribute
 from webbrowser import get
 from flask import render_template, redirect, url_for, request, Response, jsonify
 from flask.blueprints import Blueprint
-from .utils import getGif, generateDesc
+from .utils import getGif, generateDesc, createCharacter
 from .type import *
 from .models import Cards
 import random
@@ -16,6 +16,21 @@ def index():
 @mainbp.route("/form")
 def form():
     return render_template("formf.html")
+
+@mainbp.route("/generate", methods=['GET', 'POST'])
+def generate():
+    if request.method == "POST":       
+        req = request.get_json()
+        name = req['name']
+        print(req)
+        print(name)
+
+        person = createCharacter(name)
+        
+        db.session.add(person)
+        db.session.commit()
+        
+        return jsonify({"URL":person.URLCode})
 
 @mainbp.route("/create/<int:ID>/<string:name>")
 def create(ID, name):
@@ -271,7 +286,3 @@ def card(ID):
         return render_template("cardf.html", url = person.ImageURL, person = person)
     except Exception:
         return "That code is invalid"
-
-@mainbp.route("/processing")
-def processing():
-    return

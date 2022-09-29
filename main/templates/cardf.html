@@ -86,7 +86,8 @@
         </div>
 
         <label>Share your card!</label><br>
-        <a style="width: 100%; border: none; padding-top: 20px; color: purple;" type="text" readonly href="{{url_for('main.card', ID = person.URLCode, _external = True)}}">Click here</a>
+        <input id="link" type="text" style="width:100%;" value="{{url_for('main.card', ID = person.URLCode, _external = True)}}" readonly>
+        <button onclick="copyText()" id="link">Copy link!</button>
     </main>
     <footer>
         <p>Copyright</p>
@@ -94,6 +95,12 @@
 </body>
 
 <script>
+    function copyText() {
+        var copyText = document.querySelector("#link");
+        copyText.select();
+        document.execCommand('copy');
+    }
+
     setTimeout(
         () => {
             const element = document.getElementById("coverAll");

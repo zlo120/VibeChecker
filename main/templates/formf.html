@@ -11,7 +11,7 @@
 
 <body>
   <div class="wrapper">
-    <form class="form">
+    <form id="create_form" class="form">
       <div class="pageTitle title">Analytics Engine Form</div>
       <div class="secondaryTitle title">Please fill this form truthfully as our analytics engine relies on precise measurements.</div>
       <input id="name" type="text" class="name formEntry" placeholder="Name" />
@@ -167,10 +167,39 @@
     <br></br>
       <input type="checkbox" class="termsConditions" value="Term">
       <label style="color: grey" for="terms"> I Accept the <span style="color: #0e3721">Terms of Use</span> & <span style="color: #0e3721">Privacy Policy</span>.</label><br>
-      <button class="submit formEntry" onclick="create()">Submit</button>
+      <button class="submit formEntry" onclick="req()">Submit</button>
     </form>
   </div>
   <script>
+
+    $("#create_form").submit(function(e) {
+      e.preventDefault();
+    });
+
+  function req() {    
+    (async () => {
+      const rawResponse = await fetch("{{url_for('main.generate', _external=True)}}" , {
+          method: 'POST',
+          headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            'name': $("#name").val()
+          })
+      });
+
+      const content = await rawResponse.json();
+  
+      console.log(content);
+
+      var url = "{{url_for('main.card', ID='x', _external=True)}}".replace('x', content.URL);
+      /*alert(content.URL);*/
+
+      window.open(url,"_self").val();
+      })();
+  }
+
   function create() {
 
     let x = Math.floor((Math.random() * 10) + 1);
